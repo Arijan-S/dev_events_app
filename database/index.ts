@@ -8,4 +8,3 @@ export {
   type IBooking,
   type IBookingModel,
 } from "./booking.model";
-

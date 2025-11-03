@@ -270,4 +270,31 @@
       }
     }
   }
+
+  #create-event-page,
+  #events-page {
+    .search-filters {
+      @apply flex flex-col sm:flex-row gap-4 flex-wrap;
+    }
+
+    .filter-group {
+      @apply flex flex-col gap-2 min-w-[150px] sm:min-w-[200px];
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="time"],
+    select,
+    textarea {
+      @apply bg-dark-200 rounded-[6px] px-5 py-2.5 text-foreground w-full;
+    }
+
+    .form-grid {
+      @apply grid grid-cols-1 md:grid-cols-2 gap-6;
+    }
+
+    .button-group {
+      @apply flex flex-col sm:flex-row gap-4;
+    }
+  }
 }

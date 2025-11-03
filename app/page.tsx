@@ -1,8 +1,8 @@
-import EventCard from "@/components/EventCard";
+import { Suspense } from "react";
 import ExploreBtn from "@/components/ExploreBtn";
-import { events } from "@/lib/constants";
+import EventsList from "@/components/EventsList";
 
-const page = () => {
+const page = async () => {
   return (
     <section>
       <h1 className="text-center">
@@ -15,16 +15,14 @@ const page = () => {
 
       <ExploreBtn />
 
-      <div className="mt-20 space-y-7">
+      <div id="events" className="mt-20 space-y-7">
         <h3>Featured Events</h3>
 
-        <ul className="events">
-          {events.map((event) => (
-            <li className="list-none" key={event.title}>
-              <EventCard {...event} />
-            </li>
-          ))}
-        </ul>
+        <Suspense
+          fallback={<div className="text-center mt-5">Loading events...</div>}
+        >
+          <EventsList limit={9} />
+        </Suspense>
       </div>
     </section>
   );
